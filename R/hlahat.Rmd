@@ -360,6 +360,7 @@ hlahat_types_tab <- types %>%
         rename(`Allele 1` = `1`, `Allele 2` = `2`) %>%
         arrange(Category, Gene) 
 
+write.table(hlahat_types_tab, paste0(sid, '_hlatypes.tsv'), sep='\t', quote=FALSE)
 ```
 
 ### Descriptive statistics {.tabset}
@@ -383,6 +384,7 @@ dna_alleleld_tab %>%
     rownames=FALSE,
     escape = FALSE
 ) 
+write.table(dna_alleleld_tab, paste0(sid, '_dna_alleleld.tsv'), sep='\t', quote=FALSE)
 ```
 
 #### RNA LD
@@ -404,6 +406,8 @@ rna_alleleld_tab %>%
     rownames=FALSE,
     escape = FALSE
 ) 
+write.table(rna_alleleld_tab, paste0(sid, '_rna_alleleld.tsv'), sep='\t', quote=FALSE)
+
 ```
 
 ### {-}
