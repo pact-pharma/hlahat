@@ -229,7 +229,7 @@ dna_imb <- ggplot(data = NULL, aes(x = Gene, colour = factor(alleleN), label = C
         scale_y_continuous(sec.axis = sec_axis(~ 2 ^ ., name = "Copy Number Ratio", breaks = c(1,2,4,8)), breaks = seq(-20, 20, 1)) +
         scale_x_discrete(drop = FALSE) +
         scale_colour_viridis_d() +
-        labs(x = "Gene", y = "Log-fold Difference in Coverage", title = "Allelic Imbalance of HLA Alleles",
+        labs(x = "Gene", y = "Log-fold Difference in Coverage", title = "Allelic Imbalance (DNA) of HLA Alleles",
         colour = "Allele N") +
         theme_bw() +
         theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, color = gene_colors$color),
@@ -249,7 +249,7 @@ dna_imbC <- ggplot(data = NULL) +
   geom_point(data = filter(sort.dna_snpld, Gene %in% genes & alleleN == 2), aes(x = alt_pos, y = ld, colour = factor(CHROM), label = CHROM)) +
   scale_colour_viridis_d() +
   facet_grid(. ~ Gene, scales = 'free_x', space = 'free_x') +
-  labs(x = "Position within Gene", colour = "Alelle", title = "Allelic Imbalance of Class I Alleles",
+  labs(x = "Position within Gene", colour = "Alelle", title = "Allelic Imbalance (DNA) of Class I Alleles",
        y = "Log-fold Difference in Coverage") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5))
